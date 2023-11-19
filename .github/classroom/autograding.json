@@ -29,16 +29,6 @@
       "comparison": "exact",
       "timeout": 10,
       "points": 1
-    },
-    {
-      "name": "Ez Namey (optional)",
-      "setup": "npm install",
-      "run": "npx jest --testPathPattern=/tests/ez-namey.test.js",
-      "input": "",
-      "output": "",
-      "comparison": "exact",
-      "timeout": 10,
-      "points": null
     }
   ]
 }
