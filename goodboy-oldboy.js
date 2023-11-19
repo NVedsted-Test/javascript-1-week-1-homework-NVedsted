@@ -1,7 +1,13 @@
 // Goodboy-Oldboy (A dog age calculator)
 
 function printYears(dogYearOfBirth, dogYearFuture, shouldShowResultInDogYears) {
-    // TODO: your code!
+    const humanAge = dogYearFuture - dogYearOfBirth;
+
+    if (shouldShowResultInDogYears) {
+        console.log(`Your dog will be ${humanAge * 7} dog years old in ${dogYearFuture}`);
+    } else {
+        console.log(`Your dog will be ${humanAge} human years old in ${dogYearFuture}`);
+    }
 }
 
 // Don't touch this line!

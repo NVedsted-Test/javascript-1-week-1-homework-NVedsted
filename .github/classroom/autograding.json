@@ -1,24 +1,34 @@
 {
   "tests": [
     {
-      "name": "Required assignments",
+      "name": "Age-ify",
       "setup": "npm install",
-      "run": "npm test",
+      "run": "npx jest --testPathPattern=/tests/age-ify.test.js",
       "input": "",
       "output": "",
       "comparison": "exact",
       "timeout": 10,
-      "points": null
+      "points": 1
     },
     {
-      "name": "Optional assignment",
+      "name": "Goodboy-Oldboy",
       "setup": "npm install",
-      "run": "npm run test-optional",
+      "run": "npx jest --testPathPattern=/tests/goodboy-oldboy.test.js",
       "input": "",
       "output": "",
       "comparison": "exact",
       "timeout": 10,
-      "points": null
+      "points": 1
+    },
+    {
+      "name": "Housey-Pricey",
+      "setup": "npm install",
+      "run": "npx jest --testPathPattern=/tests/housey-pricey.test.js",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
     }
   ]
 }
