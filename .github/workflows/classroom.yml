@@ -1,0 +1,51 @@
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Age-ify
+      id: age-ify
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Age-ify
+        setup-command: npm install
+        command: npx jest --testPathPattern=/tests/age-ify.test.js
+        timeout: 10
+        max-score: 1
+    - name: Goodboy-Oldboy
+      id: goodboy-oldboy
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Goodboy-Oldboy
+        setup-command: npm install
+        command: npx jest --testPathPattern=/tests/goodboy-oldboy.test.js
+        timeout: 10
+        max-score: 1
+    - name: Housey-Pricey
+      id: housey-pricey
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Housey-Pricey
+        setup-command: npm install
+        command: npx jest --testPathPattern=/tests/housey-pricey.test.js
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        AGE-IFY_RESULTS: "${{steps.age-ify.outputs.result}}"
+        GOODBOY-OLDBOY_RESULTS: "${{steps.goodboy-oldboy.outputs.result}}"
+        HOUSEY-PRICEY_RESULTS: "${{steps.housey-pricey.outputs.result}}"
+      with:
+        runners: age-ify,goodboy-oldboy,housey-pricey
