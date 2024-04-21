@@ -1,7 +1,7 @@
 // Age-ify (A future age calculator)
 
 function calculateAge(yearOfBirth, futureYear) {
-    // TODO: your code
+    return 5;
 }
 
 calculateAge(1987, 2017);
