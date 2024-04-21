@@ -1,0 +1,15 @@
+{
+  "name": "javascript1-week1",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "test": "jest --testPathIgnorePatterns=tests/ez-namey.test.js",
+    "test-optional": "jest --testPathPattern=tests/ez-namey.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "clearMocks": true
+  }
+}
